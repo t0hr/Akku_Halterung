@@ -2,10 +2,10 @@
 /////////////Open SCAD /////////////////////////
 ////////////////////////////////////////////////
 
-date started  ///2016
-date finished
-modler @paradroid_
-*/
+///date started///2016
+//date finished
+//modler @paradroid_
+
 
 ////////////////////////////////////////////////
 ////////////////////parameters//////////////////
@@ -44,8 +44,8 @@ maincube();
 bottomplate();
 translate([-1.5, -1.5, 0]) legs();
 translate([-1.5,  1.5, 0]) legs();
-translate([ 1.5, -1.5, 0]) legs();
-translate([ 1.5,  1.5, 0]) legs();
+//translate([ 1.5, -1.5, 0]) legs();
+///translate([ 1.5,  1.5, 0]) legs();
 
 ////////////////////////////////////////////////
 ////////////////////modules/////////////////////
