@@ -1,0 +1,92 @@
+////////////////////////////////////////////////
+/////////////Open SCAD /////////////////////////
+////////////////////////////////////////////////
+
+///date started///2016
+//date finished
+//modler @paradroid_
+
+
+////////////////////////////////////////////////
+////////////////////parameters//////////////////
+////////////////////////////////////////////////
+
+radiusCY= 3;
+
+widthC = 8;
+lengthC=8;
+
+hightCY4=1000; 
+radiusCYT=7;
+radiusCYXT=40;
+widthC2 = 1;
+lengthC2 = 1;
+hightC = 11;
+
+hightC2 =20;
+radiusCY2 =6 ;
+
+widthC3=8; 
+lengthC3=8; 
+hightC2=1;
+
+radiusCYX=10;
+hightCY3= 20;
+
+hightCYA = 10;
+radiusCYXA= 1; 
+radiusCYXA=10;
+
+////////////////////////////////////////////////
+/////////////////////renders////////////////////
+////////////////////////////////////////////////
+difference(){
+maincube();
+     connectors();
+    
+    
+}
+
+translate([2,0,0]) connectors();
+translate([4,0,0]) connectors();
+bottomplate();
+translate([-3, 3, 0]) legs();
+translate([3,  3, 0]) legs();
+//translate([ 1.5, -1.5, 0]) legs();
+///translate([ 1.5,  1.5, 0]) legs();
+
+////////////////////////////////////////////////
+////////////////////modules/////////////////////
+////////////////////////////////////////////////
+$fn = 50;
+
+module maincube(){
+    difference(){
+        union() {
+            cube([widthC, lengthC, hightC], center=true);
+        }
+        cylinder(hightC, radiusCY, radiusCY, center=true);
+    }
+}
+
+module bottomplate(){
+    difference(){
+        translate([0, 0, -6])
+            cube([widthC3, lengthC3, hightC3], center=true);
+        translate([0, 0, -7])
+            cylinder([1000000, radiusCYX, radiusCYX], center=true);
+        
+    }
+}
+     
+module legs(){ 
+    translate([0, 0, -7])
+        cylinder ([hightCYA, radiusCYXA, radiusCYXA], center=true );
+}
+module connectors(){
+    translate([-3, 3, -5]){
+    cube([widthC2, lengthC2, hightC]);
+   
+
+}
+}
